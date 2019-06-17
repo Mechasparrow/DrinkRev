@@ -1,0 +1,52 @@
+/** Navigation **/
+.nav-link {
+    font-size: 1.5em;
+}
+.navbar {
+    background-color: #29434dff;
+}
+
+/** Drink row **/
+.drink-card-row {
+    margin-bottom: 24px;
+}
+
+/** Card stuff **/
+.cards {
+    margin-top: 32px;
+}
+
+.card-header {
+    background-color: #29434dff !important;
+}
+
+.card-img-holder {
+    background-color: white;
+    width: 200px;
+    margin-bottom: 16px;
+}
+
+
+
+.card-body {
+    background-color: #ecececff !important;
+}
+
+.card-title {
+    color: white;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/** Card Buttons **/
+.view-btn .btn {
+    background-color: #f66255ff;
+    color: white;
+}
+
+/** Ratings **/
+.rating-img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}

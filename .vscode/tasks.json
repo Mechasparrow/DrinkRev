@@ -6,7 +6,8 @@
         {
             "label": "server",
             "type": "shell",
-            "command": "python3 manage.py runserver"
+            "command": "python3 manage.py runserver",
+            "problemMatcher": []
         }
     ]
 }
