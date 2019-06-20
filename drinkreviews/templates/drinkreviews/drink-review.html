@@ -1,9 +1,52 @@
 {% extends "./web-base.html" %}
+{% load static %}
 {% block content %}
 
     <div class = "review-drink-view">
         <div class = "view-back-btn">
             <a class = "btn btn-danger" href = "{% url 'index' %}">Back</a>
+        </div>
+
+         <div class = "card">
+            <div class = "card-header">
+                <!-- Drink Title -->
+                <h3 class = "card-title">Review for Coffee</h3>
+            </div>
+
+            <div class = "card-body">
+                <h1 class = "text-center review-title">Reviewing Coffee</h1>
+
+                <div class = "row">
+                    <div class = "text-center col-sm-4 offset-sm-4 img-holder">
+                        <img class = "img-fluid" src = "https://via.placeholder.com/400"/>
+                    </div>
+                </div>
+
+                <div class = "rating-input">
+                    <!-- Placeholder-->
+                    {% with ''|center:1 as range %}
+                    {% for i in range %}
+                        <div class = "rating-img-input">
+                            <img class = "img-fluid" src = "{% static '/drinkreviews/drink.png' %}"/>
+                        </div>
+                    {% endfor %}
+                    {% endwith %}
+
+
+                    {% with ''|center:2 as range %}
+                    {% for i in range %}
+                        <div class = "rating-img-input">
+                            <img class = "img-fluid" src = "{% static '/drinkreviews/emptydrink.png' %}"/>
+                        </div>
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+
+                <div class = "btn btn-submit btn-danger">
+                    Submit
+                </div>
+
+            </div>
         </div>
     </div>
 

@@ -103,3 +103,27 @@
 
 
 /** Drink Review **/
+.review-drink-view .card {
+    margin-top: 16px;
+}
+
+.review-drink-view .review-title {
+    font-size: 4em;
+    color: #29434dff;
+}
+
+.rating-input {
+    margin-top: 32px;
+    text-align: center;
+
+}
+
+.rating-img-input {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-submit {
+    margin-top: 16px;
+}
