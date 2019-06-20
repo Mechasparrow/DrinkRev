@@ -21,9 +21,15 @@ class Drink(models.Model):
     desc = models.TextField()
     img_url = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 # DrinkReview model
 class DrinkReview(models.Model):
     drink = models.ForeignKey(Drink, on_delete = models.CASCADE)
     rating = models.IntegerField(default = 0)
+
+    def __str__(self):
+        return "Review for " + self.drink.name
 
 
