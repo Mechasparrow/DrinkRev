@@ -1,6 +1,55 @@
 {% extends "./web-base.html" %}
+{% load static %}
 {% block content %}
 
-    <h2>Create Drink</h2>
+    <div class = "create-drink-view">
+        <div class = "view-back-btn">
+            <a class = "btn btn-danger" href = "{% url 'index' %}">Back</a>
+        </div>
+
+        <div class = "card">
+            <div class = "card-header">
+                <!-- Drink Title -->
+                <h3 class = "card-title">New Drink</h3>
+            </div>
+
+            <div class = "card-body">
+                <div class = "row">
+                    <div class = "col-4">
+                        <div class = "text-center ml-auto mr-auto img-holder">
+                            <img class = "img-fluid" src = "https://via.placeholder.com/400"/>
+                        </div>
+                    </div>
+
+                    <div class = "col-8">
+                        <form id = "new-drink-form">
+                            <!-- Drink Name -->
+                            <div class = "form-group">
+                                <label for = "name-input">Name:</label>
+                                <input type = "text" class = "form-control" id = "name-input" name = "name"/>
+                            </div>
+
+                            <!-- Drink Picture -->
+                            <div class = "form-group">
+                                <label for = "picture-input">Picture:</label>
+                                <input type = "text" class = "form-control" id = "picture-input" name = "img_url"/>
+                            </div>
+
+                            <!-- Drink Desc -->
+                            <div class = "form-group">
+                                <label for = "desc-input">Description:</label>
+                                <input type = "text" class = "form-control" id = "desc-input" name = "description"/>
+                            </div>
+                            <!-- Submission button -->
+                            <button type = 'submit' class = "float-right btn btn-submit btn-danger">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+  
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

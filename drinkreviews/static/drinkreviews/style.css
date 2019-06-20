@@ -91,3 +91,15 @@
 #drink-about-info .drink-desc {
     font-size: 2em;
 }
+
+/** Drink Creation **/
+.create-drink-view .card {
+    margin-top: 16px;
+}
+
+#new-drink-form .btn-submit {
+    margin-top: 32px;
+}
+
+
+/** Drink Review **/
