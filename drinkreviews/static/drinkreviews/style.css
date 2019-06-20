@@ -1,3 +1,8 @@
+/** General Content **/
+#content {
+    margin-top: 16px;
+}
+
 /** Navigation **/
 .nav-link {
     font-size: 1.5em;
@@ -13,7 +18,7 @@
 
 /** Card stuff **/
 .cards {
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 .card-header {
@@ -38,7 +43,7 @@
 }
 
 /** Card Buttons **/
-.view-btn .btn {
+.view-btn .btn, .view-back-btn .btn {
     background-color: #f66255ff;
     color: white;
 }
@@ -48,4 +53,41 @@
     display: inline-block;
     width: 30px;
     height: 30px;
+}
+
+/** View drink page **/
+.drink-view {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.drink-view .card {
+    margin-top: 16px;
+    height: 400px;
+}
+
+.drink-view .img-holder {
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+}
+
+.drink-view .btn-review   {
+    margin-top: 16px;
+}
+
+.drink-view .rating {
+    margin-top: 16px;
+}
+
+#drink-about-info {
+    color: #29434dff;
+}
+
+#drink-about-info .drink-title {
+    font-size: 4em;
+}
+
+#drink-about-info .drink-desc {
+    font-size: 2em;
 }

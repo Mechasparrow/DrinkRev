@@ -1,12 +1,61 @@
 {% extends "./web-base.html" %}
+{% load static %}
 {% block content %}
 
-    <div class = "back-btn">
-
-    </div>
-
     <div class = "drink-view">
+        <div class = "view-back-btn">
+            <a class = "btn btn-danger" href = "{% url 'index' %}">Back</a>
+        </div>
 
+        <div class = "card">
+            <div class = "card-header">
+                <!-- Drink Title -->
+                <h3 class = "card-title">Coffee</h3>
+            </div>
+
+            <div class = "card-body">
+                <div class = "row">
+
+                    <div class = "col-4">
+                        <!-- Drink Image -->
+                        <div class = "ml-auto mr-auto img-holder">
+                            <img class = "img-fluid" src = "{% static 'drinkreviews/drinks/coffee.png' %}"/>
+                        </div>
+
+                        <!-- Drink Rating -->
+                        <div class = "rating">
+                            <!-- Placeholder-->
+                            {% with ''|center:3 as range %}
+                            {% for i in range %}
+                                <div class = "rating-img">
+                                    <img class = "img-fluid" src = "{% static '/drinkreviews/drink.png' %}"/>
+                                </div>
+                            {% endfor %}
+                            {% endwith %}
+                        </div>
+
+
+
+                        <!-- Drink Review Button-->
+                        <a href = "#" class ="btn btn-review btn-block btn-danger">
+                            Review
+                        </a>
+
+                    </div>
+
+                    <!-- About Drink -->
+                    <div id = "drink-about-info" class = "col-8">
+                        <h1 class = "drink-title">About Coffee</h1>
+                        <p class = "drink-desc">
+                            Lorem ipsum dolor sit amet,nsectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore 
+                            magna aliqua. Ut lectus arcu bibendum at varius vel 
+                            pharetra vel. Urna cursus eget nunc
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
