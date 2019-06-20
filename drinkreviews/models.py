@@ -12,6 +12,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 '''
 from django.db import models
+from django.db.models import Avg
 
 # Create your models here.
 
@@ -23,6 +24,16 @@ class Drink(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def rating(self):
+        reviews_rating = DrinkReview.objects.filter(drink=self).aggregate(Avg('rating'))['rating__avg']
+
+        if (reviews_rating == None):
+            reviews_rating = 0.0
+
+        return reviews_rating
+
 
 # DrinkReview model
 class DrinkReview(models.Model):

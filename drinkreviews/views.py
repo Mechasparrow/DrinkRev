@@ -3,9 +3,13 @@ from django.http import HttpResponse
 
 from django.template import loader
 
+from .models import Drink, DrinkReview
+
 # Create your views here.
 def index(request):
-    return render(request, 'drinkreviews/index.html',{})
+    drinks = Drink.objects.all()
+
+    return render(request, 'drinkreviews/index.html',{'drinks': drinks})
 
 def view(request):
     return render(request, 'drinkreviews/view_drink.html', {})

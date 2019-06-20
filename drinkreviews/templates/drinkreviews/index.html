@@ -3,18 +3,12 @@
 
     <div class ="cards">
         <div class = "drink-card-row row">
-            <div class = "col-md-3">
-                {% include "drinkreviews/drinkcard.html" with drinktitle="Coffee" drinkimage="/drinkreviews/drinks/coffee.png" rating=3 %}
-            </div>
-            <div class = "col-md-3">
-                {% include "drinkreviews/drinkcard.html" with drinktitle="Pepsi" drinkimage="/drinkreviews/drinks/pepper.png" rating=1 %}
-            </div>
-            <div class = "col-md-3">
-                {% include "drinkreviews/drinkcard.html" with drinktitle="Thai Tea" drinkimage="/drinkreviews/drinks/thaitea.png" rating=2 %}
-            </div>
-            <div class = "col-md-3">
-                {% include "drinkreviews/drinkcard.html" with drinktitle="Pepsi" drinkimage="/drinkreviews/drinks/pepper.png" rating=1 %}
-            </div>
+
+            {% for drink in drinks %}
+                <div class = "col-md-3">
+                    {% include "drinkreviews/drinkcard.html" with drinktitle=drink.name drinkimage=drink.img_url rating=drink.rating %}
+                </div>
+            {% endfor %}
 
         </div>        
     </div>
