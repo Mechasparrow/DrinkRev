@@ -12,4 +12,10 @@ def index(request):
     return render(request, 'drinkreviews/index.html',{'drinks': drinks})
 
 def view(request):
-    return render(request, 'drinkreviews/view_drink.html', {})
+    return render(request, 'drinkreviews/view-drink.html', {})
+
+def review(request):
+    return render(request, 'drinkreviews/drink-review.html', {})
+
+def create(request):
+    return render(request, 'drinkreviews/create-drink.html', {})
