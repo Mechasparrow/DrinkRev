@@ -22,23 +22,25 @@
                     </div>
 
                     <div class = "col-8">
-                        <form id = "new-drink-form">
+                        <form id = "new-drink-form" method = "post" action = "/drinks/create-drink">
+                            {% csrf_token %}
+
                             <!-- Drink Name -->
                             <div class = "form-group">
-                                <label for = "name-input">Name:</label>
-                                <input type = "text" class = "form-control" id = "name-input" name = "name"/>
+                                <label for = "{{form.name.id_for_label}}">Name:</label>
+                                <input type = "text" class = "form-control" id = "{{form.name.id_for_label}}" name = "{{form.name.html_name}}"/>
                             </div>
 
                             <!-- Drink Picture -->
                             <div class = "form-group">
-                                <label for = "picture-input">Picture:</label>
-                                <input type = "text" class = "form-control" id = "picture-input" name = "img_url"/>
+                                <label for = "{{form.img_url.id_for_label}}">Picture:</label>
+                                <input type = "text" class = "form-control" id = "{{form.img_url.id_for_label}}" name = "{{form.img_url.html_name}}"/>
                             </div>
 
                             <!-- Drink Desc -->
                             <div class = "form-group">
-                                <label for = "desc-input">Description:</label>
-                                <input type = "text" class = "form-control" id = "desc-input" name = "description"/>
+                                <label for = "{{form.desc.id_for_label}}">Description:</label>
+                                <textarea type = "text" class = "form-control" id = "{{form.desc.id_for_label}}" name = "{{form.desc.html_name}}"></textarea>
                             </div>
                             <!-- Submission button -->
                             <button type = 'submit' class = "float-right btn btn-submit btn-danger">
