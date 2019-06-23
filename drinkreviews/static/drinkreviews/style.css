@@ -128,3 +128,11 @@
 .btn-submit {
     margin-top: 16px;
 }
+
+/** Review drink view **/
+.review-drink-view .errorlist {
+    display:none;
+}
+#id_rating {
+    display: none;
+}

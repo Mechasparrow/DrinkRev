@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 from .models import Drink, DrinkReview
-from .forms import DrinkForm
+from .forms import DrinkForm, DrinkReviewForm
 
 # Create your views here.
 def index(request):
@@ -19,7 +19,17 @@ def view(request, pk):
 
 def review(request, pk):
     drink_to_review = Drink.objects.get(pk=pk)
-    return render(request, 'drinkreviews/drink-review.html', {'drink': drink_to_review})
+
+    if request.method == 'POST':
+        form = DrinkReviewForm(request.POST)
+        print (form.is_valid())
+        if form.is_valid():
+            new_drink_review = form.save()
+            return redirect('index')
+    else:
+        form = DrinkReviewForm({'drink': drink_to_review.id})
+
+    return render(request, 'drinkreviews/drink-review.html', {'form': form,  'drink': drink_to_review})
 
 def create(request):
     # if this is a POST request we need to process the form data
