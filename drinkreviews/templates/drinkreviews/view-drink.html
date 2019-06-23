@@ -10,7 +10,7 @@
         <div class = "card">
             <div class = "card-header">
                 <!-- Drink Title -->
-                <h3 class = "card-title">Coffee</h3>
+                <h3 class = "card-title">{{drink.name}}</h3>
             </div>
 
             <div class = "card-body">
@@ -19,13 +19,13 @@
                     <div class = "col-4">
                         <!-- Drink Image -->
                         <div class = "ml-auto mr-auto img-holder">
-                            <img class = "img-fluid" src = "{% static 'drinkreviews/drinks/coffee.png' %}"/>
+                            <img class = "img-fluid" src = "{{drink.img_url}}"/>
                         </div>
 
                         <!-- Drink Rating -->
                         <div class = "rating">
                             <!-- Placeholder-->
-                            {% with ''|center:3 as range %}
+                            {% with ''|center:drink.rating as range %}
                             {% for i in range %}
                                 <div class = "rating-img">
                                     <img class = "img-fluid" src = "{% static '/drinkreviews/drink.png' %}"/>
@@ -37,7 +37,7 @@
 
 
                         <!-- Drink Review Button-->
-                        <a href = "{% url 'review' %}" class ="btn btn-review btn-block btn-danger">
+                        <a href = "{% url 'review' drink.id %}" class ="btn btn-review btn-block btn-danger">
                             Review
                         </a>
 
@@ -47,10 +47,7 @@
                     <div id = "drink-about-info" class = "col-8">
                         <h1 class = "drink-title">About Coffee</h1>
                         <p class = "drink-desc">
-                            Lorem ipsum dolor sit amet,nsectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore 
-                            magna aliqua. Ut lectus arcu bibendum at varius vel 
-                            pharetra vel. Urna cursus eget nunc
+                            {{drink.desc}}
                         </p>
                     </div>
                 </div>

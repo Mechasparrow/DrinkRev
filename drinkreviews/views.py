@@ -11,8 +11,8 @@ def index(request):
 
     return render(request, 'drinkreviews/index.html',{'drinks': drinks})
 
-def view(request, id):
-    drink_obj = Drink.objects.get(pk = id)
+def view(request, pk):
+    drink_obj = Drink.objects.get(pk=pk)
     return render(request, 'drinkreviews/view-drink.html', {'drink': drink_obj})
 
 def review(request):

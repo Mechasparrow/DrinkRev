@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "/home/mechasparrow/Code/Web-Code/DrinkRev/venv/bin/python"
+    "python.pythonPath": "/home/mechasparrow/Code/Web-Code/DrinkRev/venv/bin/python",
+    "python.linting.flake8Enabled": false
 }
