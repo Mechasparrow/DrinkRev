@@ -34,7 +34,6 @@ class Drink(models.Model):
 
         return reviews_rating
 
-
 # DrinkReview model
 class DrinkReview(models.Model):
     drink = models.ForeignKey(Drink, on_delete = models.CASCADE)

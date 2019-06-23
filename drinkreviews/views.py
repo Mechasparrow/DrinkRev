@@ -15,8 +15,9 @@ def view(request, pk):
     drink_obj = Drink.objects.get(pk=pk)
     return render(request, 'drinkreviews/view-drink.html', {'drink': drink_obj})
 
-def review(request):
-    return render(request, 'drinkreviews/drink-review.html', {})
+def review(request, pk):
+    drink_to_review = Drink.objects.get(pk=pk)
+    return render(request, 'drinkreviews/drink-review.html', {'drink': drink_to_review})
 
 def create(request):
     return render(request, 'drinkreviews/create-drink.html', {})
