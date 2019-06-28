@@ -136,3 +136,11 @@
 #id_rating {
     display: none;
 }
+
+/** Pagination **/
+.paginator {
+    text-align:center;
+}
+.page-item {
+    display: inline-block;
+}

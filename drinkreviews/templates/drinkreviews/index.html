@@ -5,12 +5,41 @@
         <div class = "drink-card-row row">
 
             {% for drink in drinks %}
-                <div class = "col-md-3">
+                <div class = "col-md-4">
                     {% include "drinkreviews/drinkcard.html" with drink=drink %}
                 </div>
             {% endfor %}
 
         </div>        
+    </div>
+
+    <div class = "paginator">
+        <!-- Back a page -->
+        {% if drinks.has_previous %}
+        <a href = "{% url 'index' %}?page={{drinks.previous_page_number}}" class = "page-item btn btn-primary">
+            Back
+        </a>
+        {% else %}
+        <a href = "#" class = "page-item btn btn-secondary">
+            Back
+        </a>
+        {% endif %}
+
+        
+
+        <!-- Current Page -->
+        <h1 class = "page-item">{{drinks.number}}</h1>
+
+        <!-- Forward a Page-->
+        {% if drinks.has_next %}
+            <a href = "{% url 'index' %}?page={{drinks.next_page_number}}" class = "page-item btn btn-primary">
+                Forward
+            </a>
+        {% else %}
+            <a href = "#" class = "page-item btn btn-secondary">
+                Forward
+            </a>
+        {% endif %}
     </div>
 
 {% endblock %}

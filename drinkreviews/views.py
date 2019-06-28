@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
 
+from django.core.paginator import Paginator
+
 from django.template import loader
 
 from .models import Drink, DrinkReview
@@ -10,8 +12,12 @@ from .forms import DrinkForm, DrinkReviewForm
 # Create your views here.
 def index(request):
     drinks = Drink.objects.all()
+    p = Paginator(drinks, 3)
+    page = request.GET.get('page')
+    
+    paged_drinks = p.get_page(page)
 
-    return render(request, 'drinkreviews/index.html',{'drinks': drinks})
+    return render(request, 'drinkreviews/index.html',{'drinks': paged_drinks})
 
 def view(request, pk):
     drink_obj = Drink.objects.get(pk=pk)
